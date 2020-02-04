@@ -18,7 +18,7 @@ const App = () => {
              <h1 className='head1 px-2' > Nutrition and healthy recipes ! </h1>
              <div id='border' className='mx-auto mb-5'></div>
              <Link to = {{pathname: '/recipes'}}
-             className='btn btn-success btn-sm px-3 py-2' id='btn'>Start now
+             className='btn btn-success btn-sm px-md-3 py-2' id='btn'>Start now
              <FontAwesomeIcon icon={faHamburger} className='ml-3' style={{color: 'wheat'}}/>
              </Link>
              
