@@ -4,7 +4,7 @@ import '../App.css'
 
 import recipe from '../background/recipe9.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons'
+import { faPizzaSlice , faHamburger} from '@fortawesome/free-solid-svg-icons'
 
 const App = () => {
 
@@ -14,11 +14,12 @@ const App = () => {
              
              <div >
              <img src = {recipe} alt='img' className='image' />
-             <div className='head'>
-             <h1 className='head1' > nutrition and healthy recipes ! </h1>
+             <div className='head '>
+             <h1 className='head1 px-2' > Nutrition and healthy recipes ! </h1>
+             <div id='border' className='mx-auto mb-5'></div>
              <Link to = {{pathname: '/recipes'}}
-             className='btn btn-success btn-sm px-3 ' id='btn'>start now
-             <FontAwesomeIcon icon={faPizzaSlice} className='ml-3'/>
+             className='btn btn-success btn-sm px-3 py-2' id='btn'>Start now
+             <FontAwesomeIcon icon={faHamburger} className='ml-3' style={{color: 'wheat'}}/>
              </Link>
              
              </div>

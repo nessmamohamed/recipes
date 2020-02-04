@@ -5,9 +5,9 @@
 
 
 #navbar-brand{
-  font-size: calc(20px + 2vmin);
+  font-size: 37px;
   font-family: 'Pacifico', cursive;
-  color: greenyellow
+  color: lightgreen
 }
 
 
@@ -25,16 +25,23 @@
 .head{
   position: relative;
   color: white;
-  padding: 15% 0;
+  padding: 240px 0;
 }
 
 .head1{
   font-size: 9vmin;
-  padding: 40px;
+  padding-bottom: 40px;
+  font-family: 'Bangers', cursive;
+}
+
+#border{
+  border: solid 1px;
+  width: 55vmin
+
 }
 
 #btn{
-  font-size: 2rem;
+  font-size: 1.7rem;
   border-radius: 7%;
 }
 
