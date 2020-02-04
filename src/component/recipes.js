@@ -33,7 +33,7 @@ const Recipes = () => {
             const api_key = 'cb24963c536c2a7496406a81381491ea'
             const app_id = '15075e4e'
             //get recipes
-            const request = await fetch(`http://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=12&calories=591-722&health=alcohol-free`)
+            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=12&calories=591-722&health=alcohol-free`)
             const response = await request.json()
 
               //set recipes 
