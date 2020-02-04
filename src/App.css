@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+  overflow-x: hidden;
+}
+
+
+#navbar-brand{
+  font-size: calc(20px + 2vmin);
+  font-family: 'Pacifico', cursive;
+  color: greenyellow
+}
+
+
+.image{
+  background-size: cover;
+  background-position: center;
+  min-width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  position: absolute;
+  right: 0;
+  opacity: 0.9;
+}
+
+
+.head{
+  position: relative;
+  color: white;
+  padding: 15% 0;
+}
+
+.head1{
+  font-size: 9vmin;
+  padding: 40px;
+}
+
+#btn{
+  font-size: 2rem;
+  border-radius: 7%;
+}
+
+#recipe-list{
+  list-style: none;
+  font-size: larger;
+}
+
+
+
+
+
+
