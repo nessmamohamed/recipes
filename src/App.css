@@ -36,8 +36,8 @@
 
 #border{
   border: solid 1px;
-  width: 55vmin
-
+  width: 55vmin;
+  border-color: darkgray;
 }
 
 #btn{
