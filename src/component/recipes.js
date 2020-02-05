@@ -21,7 +21,7 @@ const Recipes = () => {
       }
 
     const [recipes , setReccipes] = useState([])
-    const [recipe , setReccipe] = useLocaleState('pineapple')
+    const [recipe , setReccipe] = useLocaleState('')
     const [loaded, setLoaded] = useState(false)
     
     useEffect(() => {
