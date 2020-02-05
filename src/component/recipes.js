@@ -76,7 +76,7 @@ const Recipes = () => {
                            <img className= 'card-img-top' src={recipe.recipe.image} alt='img'/>
 
                               <h3 className='card-title mt-2'>{recipe.recipe.label.length < 20 ?
-                               recipe.recipe.label: recipe.recipe.label.substring(0,25)}...</h3>
+                              `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0,25)}`}...</h3>
 
                               <Link to={{pathname: `/recipe/${recipe.recipe.calories}`,
                                          state:{recipes: recipe.recipe}}}
