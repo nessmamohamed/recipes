@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faHeart} from '@fortawesome/free-solid-svg-icons'
-import {Wave} from 'react-animated-text'
 import {Fade} from 'react-reveal'
 import SearchForm from './searchForm'
 
@@ -33,7 +32,7 @@ const Recipes = () => {
             const api_key = 'cb24963c536c2a7496406a81381491ea'
             const app_id = '15075e4e'
             //get recipes
-            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=3&to=15&calories=591-722&health=alcohol-free`)
+            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=3&to=19&calories=591-722&health=alcohol-free`)
             const response = await request.json()
 
               //set recipes 
@@ -63,11 +62,12 @@ const Recipes = () => {
            <div>
                <SearchForm onSubmit={onSubmit}/>
 
-               <div  className='container mt-5'>
+               <div  className='container-fluid mt-5 '>
                   <div className ='row text-center'>
-                {!loaded? <div className='mx-auto' style={{fontSize:'1.4rem'}}>
-                  <Wave text='loading ...' effect='stretch' effectChange='1.2'  />
-                  </div> : 
+                {!loaded? <div class="spinner-border text-warning mx-auto" role="status">
+                   <span class="sr-only">Loading...</span>
+                          </div>
+                           : 
               recipes.map(recipe => (
                 <Fade key= {recipe.recipe.calories}>
                   <div  className ='col '>
@@ -92,7 +92,9 @@ const Recipes = () => {
               </Fade>
               ))} 
                </div>
+               
                       </div>
+                     
            </div>
        )
 }
