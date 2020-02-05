@@ -21,7 +21,7 @@ const Recipes = () => {
       }
 
     const [recipes , setReccipes] = useState([])
-    const [recipe , setReccipe] = useLocaleState('blackberry')
+    const [recipe , setReccipe] = useLocaleState('pineapple')
     const [loaded, setLoaded] = useState(false)
     
     useEffect(() => {
@@ -71,7 +71,7 @@ const Recipes = () => {
               recipes.map(recipe => (
                 <Fade key= {recipe.recipe.calories}>
                   <div  className ='col '>
-                  <div className='card my-4 mx-auto' style={{width: '18rem'}}>
+                  <div className='card my-4 mx-auto' style={{width: '20rem'}}>
                           <div className='card-body'>
                            <img className= 'card-img-top' src={recipe.recipe.image} alt='img'/>
 
