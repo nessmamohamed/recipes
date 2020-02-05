@@ -3,7 +3,7 @@ import React from 'react'
 
 const SeacrchForm = ({onSubmit}) => {
     return(
-        <div className='container pt-5 text-center' style={{margin: '0 auto', width: 'fit-content'}}>
+        <div className='container pt-5 text-center' style={{margin: '20px auto', width: 'fit-content'}}>
            <form onSubmit={onSubmit}>
               <div className='row'>
                   <div className='col-12 col-sm-7 '>
