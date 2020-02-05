@@ -33,7 +33,7 @@ const Recipes = () => {
             const api_key = 'cb24963c536c2a7496406a81381491ea'
             const app_id = '15075e4e'
             //get recipes
-            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=12&calories=591-722&health=alcohol-free`)
+            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=3&to=15&calories=591-722&health=alcohol-free`)
             const response = await request.json()
 
               //set recipes 
@@ -71,16 +71,16 @@ const Recipes = () => {
               recipes.map(recipe => (
                 <Fade key= {recipe.recipe.calories}>
                   <div  className ='col '>
-                  <div className='card my-4 mx-auto' style={{width: '20rem'}}>
+                  <div className='card my-4 mx-auto shadow' style={{width: '20rem'}}>
                           <div className='card-body'>
                            <img className= 'card-img-top' src={recipe.recipe.image} alt='img'/>
 
-                              <h3 className='card-title mt-2'>{recipe.recipe.label.length < 25 ?
-                              `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0, 25)}...`}</h3>
+                              <h3 className='card-title my-4'>{recipe.recipe.label.length < 15 ?
+                              `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0, 15)}...`}</h3>
 
                               <Link to={{pathname: `/recipe/${recipe.recipe.calories}`,
                                          state:{recipes: recipe.recipe}}}
-                              className='btn btn-success btn-md'>view ingredients</Link>
+                              className='btn btn-outline-success btn-md'>view ingredients</Link>
 
                               <button className='btn btn-outline-danger btn-md mx-2'>
                               <FontAwesomeIcon icon={faHeart}  id = 'icon'/>
