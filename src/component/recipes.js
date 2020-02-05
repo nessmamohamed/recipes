@@ -62,7 +62,7 @@ const Recipes = () => {
            <div>
                <SearchForm onSubmit={onSubmit}/>
 
-               <div  className='container-fluid mt-5 ' style={{padding: '0 10%'}}>
+               <div  className='container-fluid mt-5 ' style={{padding: '0 7%'}}>
                   <div className ='row text-center'>
                 {!loaded? <div class="spinner-border text-warning mx-auto" role="status">
                    <span class="sr-only">Loading...</span>
