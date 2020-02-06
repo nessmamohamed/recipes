@@ -32,12 +32,12 @@ const Recipe = ({location})=>{
                       </div>
                   </div>
                  </div>
-                 <div className='col-8 col-md-4 mt-4 mt-md-0 text-center'>
+                 <div className='col-8 col-md-4 mt-4 mt-md-0 text-center mx-auto'>
                      
                      <div className='card'>
                        <div className='card-header bg-success text-light text-center'>-health label-  {recipe.dietLabels}</div>
                        <div className='card-body'>
-                       <ul className='my-3'>
+                       <ul className='my-3 pl-0'>
                        {recipe.healthLabels.map((label, i=1) => (
                                 <li id = 'recipe-list'  key ={i++}>{ label}</li>
                             ))}
@@ -49,7 +49,7 @@ const Recipe = ({location})=>{
                        <div className='card-header bg-danger text-light text-center'> Total Nutrients</div>
                        <div className='card-body'>
                        
-                       <ul>
+                       <ul className='pl-0'>
                            {Object.keys(nut).map((key, i=0)=>(
                                <li id= 'recipe-list-2' key={i++}>
                             <p>{nut[key].label + ` : ` + Math.floor(nut[key].quantity)+ ' ' + nut[key].unit}</p> 
