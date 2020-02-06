@@ -30,7 +30,7 @@ const App = () => {
            
              </div>
          
-             <footer id="footer">Copy rights : Nessma M. Nazir</footer>
+             <footer id="footer" className="bg-dark">Copy rights : Nessma M. Nazir</footer>
             </div>
   )        
 }
