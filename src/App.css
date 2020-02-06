@@ -56,6 +56,11 @@
   font-size: larger;
 }
 
+#recipe-list-2{
+  list-style: none;
+  
+}
+
 
 #footer{
   position: absolute;

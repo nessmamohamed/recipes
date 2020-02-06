@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{Fragment}from 'react'
 import {Link} from 'react-router-dom'
 import {Fade} from 'react-reveal'
 
@@ -6,7 +6,9 @@ const Recipe = ({location})=>{
    
     //get recipe 
     const recipe = location.state.recipes
-     console.log(recipe)
+    
+    var nut = recipe.totalNutrients
+    
     return(
          <div>
              <Fade duration={800}>
@@ -24,13 +26,15 @@ const Recipe = ({location})=>{
                                 <li id = 'recipe-list'  key ={i++}>{ ingred}</li>
                             ))}
                         </ul>
+                        <p className='text-warning'>{recipe.totalNutrients.ENERC_KCAL.unit}({Math.floor(recipe.totalNutrients.ENERC_KCAL.quantity)})</p>
                         <Link to = '/recipes' className = 'btn btn-success btn-xl d-table ' >Back to Recipes</Link>
                       </div>
                   </div>
                  </div>
-                 <div className='col-8 col-md-4 mt-4 mx-auto'>
+                 <div className='col-8 col-md-4 mt-4 mt-md-0 text-center'>
+                     
                      <div className='card'>
-                       <div className='card-header bg-danger text-light text-center'>-health label-  {recipe.dietLabels}</div>
+                       <div className='card-header bg-success text-light text-center'>-health label-  {recipe.dietLabels}</div>
                        <div className='card-body'>
                        <ul className='my-3'>
                        {recipe.healthLabels.map((label, i=1) => (
@@ -39,6 +43,23 @@ const Recipe = ({location})=>{
                         </ul>
                        </div>
                      </div>
+                     <div>
+                     <div className='card mt-4'>
+                       <div className='card-header bg-danger text-light text-center'> Total Nutrients</div>
+                       <div className='card-body'>
+                       
+                       <ul>
+                           {Object.keys(nut).map((key, i=0)=>(
+                               <li id= 'recipe-list-2' key={i++}>
+<p>{nut[key].label + ` : ` + Math.floor(nut[key].quantity)+ ' ' + nut[key].unit}</p> 
+                               </li>
+                           ))}
+                       </ul>
+                        
+                       </div>
+                     </div>
+                     </div>
+                     
                  </div>
                 </div>
             </div>

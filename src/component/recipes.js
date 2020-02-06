@@ -64,8 +64,8 @@ const Recipes = () => {
 
                <div  className='container-fluid mt-5 ' style={{padding: '0 7%'}}>
                   <div className ='row text-center'>
-                {!loaded? <div class="spinner-border text-warning mx-auto" role="status">
-                   <span class="sr-only">Loading...</span>
+                {!loaded? <div className="spinner-border text-warning mx-auto" role="status">
+                   <span className="sr-only">Loading...</span>
                           </div>
                            : 
               recipes.map(recipe => (
@@ -74,11 +74,13 @@ const Recipes = () => {
                   <div className='card my-4 mx-auto shadow' style={{width: '20rem'}}>
                           <div className='card-body'>
                            <img className= 'card-img-top' src={recipe.recipe.image} alt='img'/>
-
-                              <h3 className='card-title my-4'>{recipe.recipe.label.length < 15 ?
+           
+                              <h3 className='card-title mt-4'>{recipe.recipe.label.length < 15 ?
                               `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0, 15)}...`}</h3>
-
-                              <Link to={{pathname: `/recipe/${recipe.recipe.calories}`,
+                                      
+                              <p className='mt-2 text-warning'>{recipe.recipe.totalNutrients.ENERC_KCAL.unit}({Math.floor(recipe.recipe.totalNutrients.ENERC_KCAL.quantity)})</p>                                                                              
+                              
+                               <Link to={{pathname: `/recipe/${recipe.recipe.calories}`,
                                          state:{recipes: recipe.recipe}}}
                               className='btn btn-outline-success btn-md'>view ingredients</Link>
 
