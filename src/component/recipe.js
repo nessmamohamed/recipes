@@ -8,7 +8,8 @@ const Recipe = ({location})=>{
     const recipe = location.state.recipes
     
     var nut = recipe.totalNutrients
-    
+      
+    console.log(recipe)
     return(
          <div>
              <Fade duration={800}>
@@ -26,7 +27,7 @@ const Recipe = ({location})=>{
                                 <li id = 'recipe-list'  key ={i++}>{ ingred}</li>
                             ))}
                         </ul>
-                        <p className='text-warning'>{recipe.totalNutrients.ENERC_KCAL.unit}({Math.floor(recipe.totalNutrients.ENERC_KCAL.quantity)})</p>
+                        <p className='text-warning'>calories({Math.floor(recipe.calories)})</p>
                         <Link to = '/recipes' className = 'btn btn-success btn-xl d-table ' >Back to Recipes</Link>
                       </div>
                   </div>
@@ -51,7 +52,7 @@ const Recipe = ({location})=>{
                        <ul>
                            {Object.keys(nut).map((key, i=0)=>(
                                <li id= 'recipe-list-2' key={i++}>
-<p>{nut[key].label + ` : ` + Math.floor(nut[key].quantity)+ ' ' + nut[key].unit}</p> 
+                            <p>{nut[key].label + ` : ` + Math.floor(nut[key].quantity)+ ' ' + nut[key].unit}</p> 
                                </li>
                            ))}
                        </ul>

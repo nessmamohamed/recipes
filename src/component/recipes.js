@@ -32,7 +32,7 @@ const Recipes = () => {
             const api_key = 'cb24963c536c2a7496406a81381491ea'
             const app_id = '15075e4e'
             //get recipes
-            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=3&to=19&calories=591-722&health=alcohol-free`)
+            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=3&to=19&calories=100-500&health=alcohol-free`)
             const response = await request.json()
 
               //set recipes 
@@ -78,7 +78,7 @@ const Recipes = () => {
                               <h3 className='card-title mt-4'>{recipe.recipe.label.length < 15 ?
                               `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0, 15)}...`}</h3>
                                       
-                              <p className='mt-2 text-warning'>{recipe.recipe.totalNutrients.ENERC_KCAL.unit}({Math.floor(recipe.recipe.totalNutrients.ENERC_KCAL.quantity)})</p>                                                                              
+                              <p className='mt-2 text-warning'>calories({Math.floor(recipe.recipe.calories)})</p>                                                                              
                               
                                <Link to={{pathname: `/recipe/${recipe.recipe.calories}`,
                                          state:{recipes: recipe.recipe}}}
