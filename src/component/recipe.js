@@ -31,7 +31,8 @@ const Recipe = ({location})=>{
                                 <li id = 'recipe-list'  key ={c++}>{ ingred}</li>
                             ))}
                         </ul>
-                        <p className='text-warning'>calories({Math.floor(recipe.calories/recipe.yield)})</p>
+                        <p className='text-warning'>calories({Math.floor(recipe.calories/recipe.yield)+' /serv'})</p>
+                            <p className='text-warning border-bottom pb-3'>{recipe.yield} Serving</p>
                         <Link to = '/recipes' className = 'btn btn-success btn-xl d-table ' >Back to Recipes</Link>
                       </div>
                   </div>
