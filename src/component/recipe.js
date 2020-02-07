@@ -12,7 +12,7 @@ const Recipe = ({location})=>{
     const obj2 = Object.values(nut)
 
   
-    
+    console.log(recipe)
     
     return(
          <div>
@@ -34,6 +34,7 @@ const Recipe = ({location})=>{
                         <p className='text-warning'>calories({Math.floor(recipe.calories/recipe.yield)+' /serv'})</p>
                             <p className='text-warning border-bottom pb-3'>{recipe.yield} Serving</p>
                         <Link to = '/recipes' className = 'btn btn-success btn-xl d-table ' >Back to Recipes</Link>
+                        <p className='pt-4 pt-lg-0 '><a href={recipe.url}  style={{color: '#6189b5'}}>Click here for recipe preparation</a></p>
                       </div>
                   </div>
                  </div>
@@ -59,7 +60,7 @@ const Recipe = ({location})=>{
                        {obj2.map((val, x=0)=>(
                            <li id='recipe-list-2' key={x++} className='d-flex justify-content-center ' >
                                <p className='pr-3' >{val.label+ ' :'} </p>
-                       <p>{Math.floor(val.quantity/recipe.yield)}</p>
+                       <p>{Math.floor(val.quantity/recipe.yield) + ' '+  val.unit}</p>
                            </li>
                        ))}
                        </ul>
