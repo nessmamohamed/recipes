@@ -7,9 +7,13 @@ const Recipe = ({location})=>{
     //get recipe 
     const recipe = location.state.recipes
     
-    var nut = recipe.totalNutrients
-      
-    console.log(recipe)
+    const nut = recipe.totalNutrients
+ 
+    const obj2 = Object.values(nut)
+
+  
+    
+    
     return(
          <div>
              <Fade duration={800}>
@@ -23,11 +27,11 @@ const Recipe = ({location})=>{
                        <img className='card-img-top' src={recipe.image} alt='img'
                        style={{height: '50vh'}}/>
                         <ul className='my-3 pl-0 pb-3'>
-                            {recipe.ingredientLines.map((ingred, i=1) => (
-                                <li id = 'recipe-list'  key ={i++}>{ ingred}</li>
+                            {recipe.ingredientLines.map((ingred, c=1) => (
+                                <li id = 'recipe-list'  key ={c++}>{ ingred}</li>
                             ))}
                         </ul>
-                        <p className='text-warning'>calories({Math.floor(recipe.calories)})</p>
+                        <p className='text-warning'>calories({Math.floor(recipe.calories/recipe.yield)})</p>
                         <Link to = '/recipes' className = 'btn btn-success btn-xl d-table ' >Back to Recipes</Link>
                       </div>
                   </div>
@@ -49,12 +53,14 @@ const Recipe = ({location})=>{
                        <div className='card-header bg-danger text-light text-center'> Total Nutrients</div>
                        <div className='card-body'>
                        
-                       <ul className='pl-0'>
-                           {Object.keys(nut).map((key, i=0)=>(
-                               <li id= 'recipe-list-2' key={i++}>
-                            <p>{nut[key].label + ` : ` + Math.floor(nut[key].quantity)+ ' ' + nut[key].unit}</p> 
-                               </li>
-                           ))}
+                       <ul className='pl-0  '>
+                       
+                       {obj2.map((val, x=0)=>(
+                           <li id='recipe-list-2' key={x++} className='d-flex justify-content-center ' >
+                               <p className='pr-3' >{val.label+ ' :'} </p>
+                       <p>{Math.floor(val.quantity/recipe.yield)}</p>
+                           </li>
+                       ))}
                        </ul>
                         
                        </div>

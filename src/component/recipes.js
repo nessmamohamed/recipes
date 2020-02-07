@@ -23,6 +23,9 @@ const Recipes = () => {
     const [recipe , setReccipe] = useLocaleState('')
     const [loaded, setLoaded] = useState(false)
     
+    
+    
+
     useEffect(() => {
       
              // call api
@@ -78,7 +81,7 @@ const Recipes = () => {
                               <h3 className='card-title mt-4'>{recipe.recipe.label.length < 15 ?
                               `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0, 15)}...`}</h3>
                                       
-                              <p className='mt-2 text-warning'>calories({Math.floor(recipe.recipe.calories)})</p>                                                                              
+                              <p className='mt-2 text-warning'>calories({Math.floor(recipe.recipe.calories/recipe.recipe.yield)})</p>                                                                              
                               
                                <Link to={{pathname: `/recipe/${recipe.recipe.calories}`,
                                          state:{recipes: recipe.recipe}}}
