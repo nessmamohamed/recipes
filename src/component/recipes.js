@@ -9,68 +9,134 @@ import SearchForm from './searchForm'
 
 const Recipes = () => {
 
-      //locale state 
-      const useLocaleState = (item)=>{
-        const [loc , setState] = useState(localStorage.getItem(item))
-         const setLoc = (newItem) => {
-             localStorage.setItem(item, newItem)
-             setState(newItem)
-          }
-        return[loc, setLoc]
-      }
+     
 
     const [recipes , setReccipes] = useState([])
-    const [recipe , setReccipe] = useLocaleState('')
+    const [recipe , setReccipe] = useState(localStorage.recipe.length <= 2 ? '' : JSON.parse(localStorage.getItem('recipe')))
+    const [diet, setDiet] = useState( localStorage.diet.length <= 2 ? [] : JSON.parse(localStorage.getItem('diet')) )
+    const [health , setHealth] = useState( localStorage.health.length <=2 ? ['alcohol-free'] : JSON.parse(localStorage.getItem('health')))
     const [loaded, setLoaded] = useState(false)
+    const [error, setError] = useState(false)
     
     
-    
-
+   
     useEffect(() => {
-      
+     
              // call api
             const getRecipes = async () =>{
-              
-              
-            const api_key = 'cb24963c536c2a7496406a81381491ea'
+            
+            try{
+              const api_key = 'cb24963c536c2a7496406a81381491ea'
             const app_id = '15075e4e'
+           
+
             //get recipes
-            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=3&to=19&calories=100-500&health=alcohol-free`)
+            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=16&calories=50-600${diet.length > 0 ? `&diet=${diet.join('&')}` : ''}&health=${health.join('&')}`)
             const response = await request.json()
 
               //set recipes 
               setReccipes(response.hits)
-              
+              setError(false)
               setLoaded(true)
+
+              if(response.hits.length === 0){
+                setError(true)
+              }
+            }catch (e){
+                  setError(true)
+                  console.log(e)
+            }
            }
      
            getRecipes()
 
            setLoaded(false)
-            }, [ recipe])
+   }, [ recipe])
         
 
-     
-       
        // on click
        const onSubmit = (e) => {
          e.preventDefault()
          let newRecipe = e.target.elements.search.value
          
          setReccipe(newRecipe)
-         
-       }
+           // call api
+           const getRecipes = async () =>{
+            
+            try{
+              const api_key = 'cb24963c536c2a7496406a81381491ea'
+            const app_id = '15075e4e'
+           
 
+            //get recipes
+            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=16&calories=50-600${diet.length > 0 ? `&diet=${diet.join('&')}` : ''}&health=${health.join('&')}`)
+            const response = await request.json()
+
+              //set recipes 
+              setReccipes(response.hits)
+              setError(false)
+              setLoaded(true)
+
+              if(response.hits.length === 0){
+                setError(true)
+              }
+            }catch (e){
+                  setError(true)
+                  console.log(e)
+            }
+           }
+     
+           getRecipes()
+
+           setLoaded(false)
+       }
+      
+       //on change
+    const onChange = (e)=>{
+     if(e.target.checked ){
+       if(!diet.includes(e.target.name)){
+        setDiet([...diet, e.target.name])
+       }} else{
+       setDiet(diet.filter(name => name !== e.target.name))
+     }
+    }
+    
+     
+      //on change2 
+      const onChange2 =(e) =>{
+        if(e.target.checked){
+          if(!health.includes(e.target.name)){
+            setHealth([...health, e.target.name])
+           }}else{
+          setHealth(health.filter(name => name !== e.target.name))
+        } 
+        
+      }
+      //store health and diet
+      localStorage.setItem("diet", JSON.stringify(diet))
+      localStorage.setItem("health", JSON.stringify(health))
+      localStorage.setItem("recipe", JSON.stringify(recipe))
+      
+      console.log(diet)
        return(
            <div>
-               <SearchForm onSubmit={onSubmit}/>
 
-               <div  className='container-fluid mt-5 ' style={{padding: '0 7%'}}>
+               <SearchForm onSubmit={onSubmit}
+                          onChange = {onChange}
+                          onChange2 = {onChange2}
+                          diet = {diet}
+                          health = {health}/>
+
+               <div  className='container-fluid mt-3 ' style={{padding: '0 7%'}}>
                   <div className ='row text-center'>
-                {!loaded? <div className="spinner-border text-warning mx-auto" role="status">
+                { error ?  <div className="alert alert-danger mx-auto pt-1 px-5 pb-0" role="status">
+                                       <p className='mb-1 mx-5'>Sorry .. recipes not founed</p>
+                                  </div> :
+                !loaded? <div className="spinner-border text-warning mx-auto" role="status">
                    <span className="sr-only">Loading...</span>
                           </div>
-                           : 
+                           :
+                           
               recipes.map(recipe => (
                 <Fade key= {recipe.recipe.calories}>
                   <div  className ='col '>

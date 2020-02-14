@@ -11,8 +11,6 @@ const Recipe = ({location})=>{
  
     const obj2 = Object.values(nut)
 
-  
-    console.log(recipe)
     
     return(
          <div>
@@ -25,7 +23,7 @@ const Recipe = ({location})=>{
                       
                        <h1 className='card-title '>{recipe.label}</h1>
                        <img className='card-img-top' src={recipe.image} alt='img'
-                       style={{height: '50vh'}}/>
+                       style={{height: '50vh', width: '40vw'}}/>
                         <ul className='my-3 pl-0 pb-3'>
                             {recipe.ingredientLines.map((ingred, c=1) => (
                                 <li id = 'recipe-list'  key ={c++}>{ ingred}</li>
