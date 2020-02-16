@@ -117,7 +117,7 @@ const Recipes = () => {
       localStorage.setItem("health", JSON.stringify(health))
       localStorage.setItem("recipe", JSON.stringify(recipe))
       
-      console.log(diet)
+      
        return(
            <div>
 
