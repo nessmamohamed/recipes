@@ -12,7 +12,7 @@ const Recipes = () => {
      
 
     const [recipes , setReccipes] = useState([])
-    const [recipe , setReccipe] = useState(localStorage.recipe.length <= 2 ? '' : JSON.parse(localStorage.getItem('recipe')))
+    const [recipe , setReccipe] = useState(!localStorage.recipe.length >= 2 ? '' : JSON.parse(localStorage.getItem('recipe')))
     const [diet, setDiet] = useState( localStorage.diet.length <= 2 ? [] : JSON.parse(localStorage.getItem('diet')) )
     const [health , setHealth] = useState( localStorage.health.length <=2 ? ['alcohol-free'] : JSON.parse(localStorage.getItem('health')))
     const [loaded, setLoaded] = useState(false)
