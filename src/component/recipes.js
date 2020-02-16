@@ -124,6 +124,7 @@ const Recipes = () => {
                <SearchForm onSubmit={onSubmit}
                           onChange = {onChange}
                           onChange2 = {onChange2}
+                          recipe={recipe}
                           diet = {diet}
                           health = {health}/>
 
