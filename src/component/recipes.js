@@ -120,7 +120,9 @@ const Recipes = () => {
       
        return(
            <div>
-
+           
+             
+              
                <SearchForm onSubmit={onSubmit}
                           onChange = {onChange}
                           onChange2 = {onChange2}
