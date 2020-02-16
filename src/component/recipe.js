@@ -22,8 +22,8 @@ const Recipe = ({location})=>{
                       <div className='card-body text-center'>
                       
                        <h1 className='card-title '>{recipe.label}</h1>
-                       <img className='card-img-top' src={recipe.image} alt='img'
-                       style={{height: '50vh', width: '40vw'}}/>
+                       <img className='card-img-top pt-3' src={recipe.image} alt='img'
+                       style={{height: '50vh'}}/>
                         <ul className='my-3 pl-0 pb-3'>
                             {recipe.ingredientLines.map((ingred, c=1) => (
                                 <li id = 'recipe-list'  key ={c++}>{ ingred}</li>
