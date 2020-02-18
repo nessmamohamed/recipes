@@ -8,7 +8,7 @@ const SeacrchForm = ({onSubmit, onChange, onChange2 , diet, health, recipe}) => 
         <div className='container pt-5 text-center' style={{margin: '20px auto', width: 'fit-content'}}>
            
             <form onSubmit={onSubmit}>
-              <div className='row'>
+              <div className='row pt-5'>
                   
                   <div className='col-12 col-sm-7 '>
                   <input  type='text' defaultValue={recipe} placeholder='Ex- Chicken' name='search'

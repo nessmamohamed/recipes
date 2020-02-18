@@ -135,7 +135,7 @@ const Recipes = () => {
                 { error ?  <div className="alert alert-danger mx-auto pt-1 px-5 pb-0" role="status">
                                        <p className='mb-1 mx-5'>Sorry .. recipes not founed</p>
                                   </div> :
-                !loaded? <div className="spinner-border text-warning mx-auto" role="status">
+                !loaded? <div className="spinner-border text-dark mx-auto" role="status">
                    <span className="sr-only">Loading...</span>
                           </div>
                            :

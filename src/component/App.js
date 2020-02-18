@@ -6,7 +6,8 @@ import recipe from '../background/recipe9.jpg'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHamburger} from '@fortawesome/free-solid-svg-icons'
-
+import {Fade} from 'react-reveal'
+import {Zoom} from 'react-reveal'
 const App = () => {
 
   return(
@@ -17,10 +18,15 @@ const App = () => {
 
              <img src = {recipe} alt='img' className='image' />
              <div className='head '>
-             <h1 className='head1 px-2' > Nutrition and healthy recipes ! </h1>
-             <div id='border' className='mx-auto mb-5'></div>
+               <Fade top >
+               <h1 className='head1 px-2' > Nutrition and healthy recipes ! </h1>
+               </Fade>
+              <Zoom >
+              <div id='border' className='mx-auto mb-5'></div>
+              </Zoom>
+              
              <Link to = {{pathname: '/recipes'}}
-             className='btn btn-success btn-sm px-md-3 py-2' id='btn'>Start now
+             className='btn btn-success btn-sm rounded px-md-3 py-2' id='btn'>Start now
              <FontAwesomeIcon icon={faHamburger} className='ml-3' style={{color: 'wheat'}}/>
              </Link>
              <div className=''>
@@ -30,7 +36,7 @@ const App = () => {
            
              </div>
          
-             <footer id="footer" className="bg-dark">Copy rights : Nessma M. Nazir</footer>
+            
             </div>
   )        
 }

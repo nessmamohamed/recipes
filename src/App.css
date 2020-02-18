@@ -1,3 +1,6 @@
+#root{
+  font-family: cursive;
+}
 .App {
   text-align: center;
   position: relative;
@@ -30,7 +33,7 @@
 .head{
   position: relative;
   color: white;
-  padding-top: 240px ;
+  padding-top: 280px ;
   
 }
 
@@ -41,14 +44,13 @@
 }
 
 #border{
-  border: solid 1px;
+  border: solid 2px;
   width: 55vmin;
   border-color: darkgray;
 }
 
 #btn{
   font-size: 1.7rem;
-  border-radius: 7%;
 }
 
 #recipe-list{
