@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import '../App.css'
 
-import recipe from '../background/recipe9.jpg'
+import recipe from '../background/recipe.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHamburger} from '@fortawesome/free-solid-svg-icons'
