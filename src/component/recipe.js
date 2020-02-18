@@ -29,7 +29,7 @@ const Recipe = ({location})=>{
                                 <li id = 'recipe-list'  key ={c++}>{ ingred}</li>
                             ))}
                         </ul>
-                        <div className='d-inline-flex border-bottom justify-content-center mb-4' style={{width: '60%'}}>
+                        <div className='d-md-flex border-bottom mx-auto justify-content-center mb-4' style={{width: '60%'}}>
                         <p className='text-warning'>calories({Math.floor(recipe.calories/recipe.yield)+' /serv'})</p>
                             <p className='text-warning pl-4  '>{recipe.yield} Serving</p>
                             
