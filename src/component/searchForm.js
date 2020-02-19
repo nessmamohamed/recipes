@@ -46,7 +46,7 @@ const SeacrchForm = ({onSubmit, onChange, onChange2 , diet, health, recipe}) => 
                 <label className='custom-control-label' htmlFor='blank5'>high-protein</label>
                 </div>
                </div>
-               <div className='col pl-3'>
+               <div className='col '>
                <div className="custom-control custom-checkbox" id='form'>
                 <input name='low-carb' className="custom-control-input position-static mr-2" defaultChecked={diet.includes('low-carb')} onChange={onChange} type="checkbox" id="blank6" />
                 <label className='custom-control-label' htmlFor='blank6'>low-carb</label>
