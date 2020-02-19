@@ -19,6 +19,7 @@ export default class Root extends React.Component{
     
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, true);
+        this.setDefaultFont
       }
     
       
@@ -29,6 +30,25 @@ export default class Root extends React.Component{
         })
     
       };
+
+       setDefaultFont = {
+        Android: function () {
+            $('*').css( "font-family", "cursive" );
+        },
+        BlackBerry: function () {
+            $('*').css( "font-family", "//FONT USED IN BLACKBERRY BROWSERS" );
+        },
+        iOS: function () {
+            $('*').css( "font-family", "//FONT USED IN iOS BROWSERS" );
+        },
+        Opera: function () {
+            $('*').css( "font-family", "//FONT USED IN OPERA BROWSERS" );
+        },
+        Windows: function () {
+            $('*').css( "font-family", "cursive" );
+        }
+    };
+
   render(){
      
       return(
