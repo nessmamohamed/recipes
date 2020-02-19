@@ -3,7 +3,7 @@ import React from 'react'
 
 const SeacrchForm = ({onSubmit, onChange, onChange2 , diet, health, recipe}) => {
     
-    
+  
     return(
         <div className='container pt-5 text-center' style={{margin: '20px auto', width: 'fit-content'}}>
            
@@ -11,8 +11,8 @@ const SeacrchForm = ({onSubmit, onChange, onChange2 , diet, health, recipe}) => 
               <div className='row pt-5'>
                   
                   <div className='col-12 col-sm-7 '>
-                  <input  type='text' defaultValue={recipe} placeholder='Ex- Chicken' name='search'
-                   className = 'pl-3'
+                  <input  type='text'  placeholder={recipe ? recipe : 'Ex: Chicken'} name='search'
+                   className = 'pl-3' 
                   style={{border:'none', borderBottom:'1px solid rgba(40, 167, 69, 0.52)'}} />
                   </div>
                   <div className='col-12 col-sm-5 mt-3 mt-sm-0'>

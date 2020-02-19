@@ -4,7 +4,7 @@ import {BrowserRouter as Router , Route} from 'react-router-dom'
 import App from './component/App'
 import Recipes from './component/recipes'
 import Recipe from './component/recipe'
-import {Fade} from 'react-reveal'
+
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
