@@ -17,41 +17,38 @@ const Recipes = () => {
     const [health , setHealth] = useState( !localStorage.health ? ['alcohol-free'] : JSON.parse(localStorage.getItem('health')))
     const [loaded, setLoaded] = useState(false)
     const [error, setError] = useState(false)
-    
-    
+    const [request, setRequest] = useState(false)
+    // call api
+    const getRecipes = async () =>{
+      setLoaded(false)
+      try{
+        const api_key = 'cb24963c536c2a7496406a81381491ea'
+      const app_id = '15075e4e'
+     
+
+      //get recipes
+      const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=16&calories=50-600${diet.length > 0 ? `&diet=${diet.join('&')}` : ''}&health=${health.join('&')}`)
+      const response = await request.json()
+
+        //set recipes 
+        setReccipes(response.hits)
+        setError(false)
+        setLoaded(true)
+
+        if(response.hits.length === 0){
+          setError(true)
+        }
+      }catch (e){
+            setError(true)
+            setLoaded(false)
+            console.log(e)
+      }
+     }
    
     useEffect(() => {
-     
-             // call api
-            const getRecipes = async () =>{
-            
-            try{
-              const api_key = 'cb24963c536c2a7496406a81381491ea'
-            const app_id = '15075e4e'
-           
-
-            //get recipes
-            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=16&calories=50-600${diet.length > 0 ? `&diet=${diet.join('&')}` : ''}&health=${health.join('&')}`)
-            const response = await request.json()
-
-              //set recipes 
-              setReccipes(response.hits)
-              setError(false)
-              setLoaded(true)
-
-              if(response.hits.length === 0){
-                setError(true)
-              }
-            }catch (e){
-                  setError(true)
-                  console.log(e)
-            }
-           }
-     
            getRecipes()
-
-           setLoaded(false)
-   }, [ recipe])
+  
+   }, [ recipe, request])
         
 
        // on click
@@ -60,35 +57,8 @@ const Recipes = () => {
          let newRecipe = e.target.elements.search.value
          
          setReccipe(newRecipe)
-           // call api
-           const getRecipes = async () =>{
-            
-            try{
-              const api_key = 'cb24963c536c2a7496406a81381491ea'
-            const app_id = '15075e4e'
-           
-
-            //get recipes
-            const request = await fetch(`https://api.edamam.com/search?q=${recipe}&app_id=${app_id}&app_key=${api_key}&from=0&to=16&calories=50-600${diet.length > 0 ? `&diet=${diet.join('&')}` : ''}&health=${health.join('&')}`)
-            const response = await request.json()
-
-              //set recipes 
-              setReccipes(response.hits)
-              setError(false)
-              setLoaded(true)
-
-              if(response.hits.length === 0){
-                setError(true)
-              }
-            }catch (e){
-                  setError(true)
-                  console.log(e)
-            }
-           }
-     
-           getRecipes()
-
-           setLoaded(false)
+         setRequest(!request)
+        
        }
       
        //on change
@@ -140,8 +110,8 @@ const Recipes = () => {
                           </div>
                            :
                            
-              recipes.map(recipe => (
-                <Fade key= {recipe.recipe.calories}>
+              recipes.map((recipe, p=200)=> (
+                <Fade key= {p++}>
                   <div  className ='col '>
                   <div className='card my-4 mx-auto shadow' style={{width: '20rem'}}>
                           <div className='card-body'>
