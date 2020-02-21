@@ -9,6 +9,8 @@ const Weight =()=>{
      let [Weight , setWEIGHT] = useState()
      let [age, setAge] = useState()
      let [totalCalories , setTotalCalories] = useState()
+     const [empty , setEmpty] = useState(false)
+     const [valid, setValid] = useState(true)
 
      const onclickMale= ()=>{
          setMale(true)
@@ -50,15 +52,27 @@ const Weight =()=>{
            
         let totalCaloriess = activity ? calories * activity : calories
          setTotalCalories(Math.floor(totalCaloriess))
+
+         if( !Weight || !Height || !age ){
+           setEmpty(true)
+         } else{
+             setEmpty(false)
+         }
+
+         if(typeof(Weight || Height || age) !== String){
+                  setValid(false)
+         }else{
+             setValid(true)
+         }
     }
     
      
     return(
-       <div className='pt-5 text-center'>
+       <div className='pt-5 text-center' >
            
         
 
-        <div className='container col-lg-5 col-md-8 col-10 pt-5'>
+        <div className='container col-lg-5 col-md-8 col-10 pt-5' style={{minHeight:'100vh'}}>
             <div className='card shadow mb-4'>
              <div className='card-title px-3'>
              <h4 className='mt-5 mb-3 '>Calculate daily calories by mifflin sant's equation</h4>
@@ -80,16 +94,19 @@ const Weight =()=>{
                  
                  <div className='mb-4'>
                  <label>Weight: </label>
-                <input onChange={onChange3} type='text' className='input ml-3 mr-2 text-center' required/> <span>Kg</span>
+                <input type='number' min= '10' max='300' title='weight must contain numbers from 10 to 300' 
+                 onChange={onChange3} type='text' className='input ml-3 mr-2 text-center' required/> <span>Kg</span>
                  </div>
                  <div className='mb-4'>
                  <label>Height: </label>
-                <input onChange={onChange2} type='text' className='input ml-3 mr-2 text-center' required/> <span>Cm</span>
+                <input type='number' min='15' max='250' title='height must contain numbers from 15 to 250'
+                onChange={onChange2} type='text' className='input ml-3 mr-2 text-center' required/> <span>Cm</span>
                  </div>
                   
                   <div className= 'mb-4'>
                   <label>Age: </label>
-                <input onChange={onChange4} type='text' className='input ml-3 mr-2 text-center' required/> 
+                <input type ='number' min='1' max='100' title='age must contain numbers from 5 to 100'
+                 onChange={onChange4} type='text' className='input ml-3 mr-2 text-center' required/> 
                   </div>
 
                   <div>
@@ -130,12 +147,22 @@ const Weight =()=>{
                   </div>
 
                   <button onClick={equation} className ='btn btn-md btn-outline-danger my-4 px-4'>Submit</button>
-                  {totalCalories ?
+                  { empty ? <p className='text-danger'>Please enter all fields !</p> :
+                    !valid? <p className='text-danger'>please enter a valid numbers !</p>:
+                  totalCalories ?
                    <p className='text-info mb-4'>Your total daily calories is {totalCalories}</p> : ''}
                     
              </div>
             </div>
         </div>
+
+        <footer  className='bg-light text-dark py-3'>
+            Copy rights @Nessma M. Nazir <br/>
+            contact info: nessomohamed555@gmail.com <br/>
+                          K𝓪reem11222 (Gaster)™️ ✘#5136 <br/>
+                          Nesso™ ✘#2257 
+                          
+        </footer>
        </div>
 
     )

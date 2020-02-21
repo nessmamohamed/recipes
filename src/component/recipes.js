@@ -89,7 +89,7 @@ const Recipes = () => {
       
       
        return(
-           <div>
+           <div  style={{minHeight:'100vh'}}>
            
              
               
@@ -100,7 +100,7 @@ const Recipes = () => {
                           diet = {diet}
                           health = {health}/>
 
-               <div  className='container-fluid mt-3 ' style={{padding: '0 7%'}}>
+               <div  className='container-fluid mt-3 ' style={{padding: '0 7%', minHeight:'100vh'}}>
                   <div className ='row text-center'>
                 { error ?  <div className="alert alert-danger mx-auto pt-1 px-5 pb-0" role="status">
                                        <p className='mb-1 mx-5'>Sorry .. recipes not founed</p>
@@ -138,7 +138,12 @@ const Recipes = () => {
                </div>
                
                       </div>
-                     
+                      <footer  className='bg-light text-dark text-center py-3'>
+                     Copy rights @Nessma M. Nazir <br/>
+                     contact info: nessomohamed555@gmail.com <br/>
+                     K𝓪reem11222 (Gaster)™️ ✘#5136 <br/>
+                     Nesso™ ✘#2257
+                            </footer>
            </div>
        )
 }

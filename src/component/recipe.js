@@ -15,7 +15,7 @@ const Recipe = ({location})=>{
     return(
          <div>
              <Fade duration={800}>
-            <div className = 'container py-5 ' >
+            <div className = 'container py-5 ' style={{minHeight:'100vh'}}>
                 <div className='row ' style={{paddingTop: 'inherit'}}>
                  <div className='col-12 col-md-7 col-lg-8 mx-auto' >
                   <div className = 'card mx-auto shadow'>
@@ -75,6 +75,12 @@ const Recipe = ({location})=>{
                 </div>
             </div>
               </Fade>
+              <footer  className='bg-light text-dark text-center py-3'>
+                     Copy rights @Nessma M. Nazir <br/>
+                     contact info: nessomohamed555@gmail.com <br/>
+                                   K𝓪reem11222 (Gaster)™️ ✘#5136 <br/>
+                                   Nesso™ ✘#2257
+                            </footer>
          </div>
     )
 }

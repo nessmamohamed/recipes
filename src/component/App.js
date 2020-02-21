@@ -12,7 +12,7 @@ const App = () => {
 
   return(
            
-            <div className='App'>
+            <div className='App' >
              
              <div id='content-wrap'>
 
@@ -26,7 +26,7 @@ const App = () => {
               </Zoom>
               <div>
               <Link to = {{pathname: '/recipes'}}
-             className='btn btn-success btn-sm rounded px-md-3 py-2' id='btn'>Start now
+             className='btn btn-success btn-sm rounded px-md-3 py-2 mr-2' id='btn'>Start now
              <FontAwesomeIcon icon={faHamburger} className='ml-3' style={{color: 'wheat'}}/>
              </Link>
 
