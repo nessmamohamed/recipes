@@ -6,7 +6,7 @@ const Weight =()=>{
      const [female, setFemale]= useState(true)
      let [activity , setActivity] = useState(0)
      let[Height, setHeight] = useState()
-     let [Weight , setWEIGHT] = useState()
+     let [Weight , setWEIGHT] =useState()
      let [age, setAge] = useState()
      let [totalCalories , setTotalCalories] = useState()
      const [empty , setEmpty] = useState(false)
@@ -39,6 +39,7 @@ const Weight =()=>{
 
     const onChange3 =(e)=>{
         setWEIGHT(e.target.value)
+        
     }
 
     const onChange4 =(e)=>{
@@ -59,11 +60,13 @@ const Weight =()=>{
              setEmpty(false)
          }
 
-         if(typeof(Weight || Height || age) !== String){
+         if(typeof(calories) !== 'number'){
                   setValid(false)
          }else{
              setValid(true)
          }
+
+        
     }
     
      
