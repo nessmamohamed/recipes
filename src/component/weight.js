@@ -59,7 +59,7 @@ const Weight =()=>{
         
 
         <div className='container col-lg-5 col-md-8 col-10 pt-5'>
-            <div className='card shadow '>
+            <div className='card shadow mb-4'>
              <div className='card-title px-3'>
              <h4 className='mt-5 mb-3 '>Calculate daily calories by mifflin sant's equation</h4>
         <Zoom>
