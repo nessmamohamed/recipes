@@ -115,7 +115,7 @@ const Recipes = () => {
                   <div  className ='col '>
                   <div className='card my-4 mx-auto shadow' style={{width: '20rem'}}>
                           <div className='card-body'>
-                           <img className= 'card-img-top' src={recipe.recipe.image} alt='img'/>
+                           <img className= 'card-img-top shadow rounded' src={recipe.recipe.image} alt='img'/>
            
                               <h3 className='card-title mt-4'>{recipe.recipe.label.length < 15 ?
                               `${recipe.recipe.label}` : `${recipe.recipe.label.substring(0, 15)}...`}</h3>

@@ -5,7 +5,7 @@ import '../App.css'
 import recipe from './background/recipe.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHamburger} from '@fortawesome/free-solid-svg-icons'
+import { faHamburger, faWeight} from '@fortawesome/free-solid-svg-icons'
 import {Fade} from 'react-reveal'
 import {Zoom} from 'react-reveal'
 const App = () => {
@@ -19,19 +19,23 @@ const App = () => {
              <img src = {recipe} alt='img' className='image' />
              <div className='head '>
                <Fade top >
-               <h1 className='head1 px-2' > Nutrition and healthy recipes ! </h1>
+               <h1 className='head1 px-2 pb-3 pb-sm-5' > Nutrition and healthy recipes! </h1>
                </Fade>
               <Zoom >
               <div id='border' className='mx-auto mb-5'></div>
               </Zoom>
-              
-             <Link to = {{pathname: '/recipes'}}
+              <div>
+              <Link to = {{pathname: '/recipes'}}
              className='btn btn-success btn-sm rounded px-md-3 py-2' id='btn'>Start now
              <FontAwesomeIcon icon={faHamburger} className='ml-3' style={{color: 'wheat'}}/>
              </Link>
-             <div className=''>
-            
-             </div>
+
+             <Link to = {{pathname: '/weight'}}
+             className='btn btn-danger btn-sm rounded ml-2 mt-2 mt-sm-0 px-md-3 py-1 ' id='btn' >Calories
+             <FontAwesomeIcon icon={faWeight} className='ml-3' />
+             </Link>
+              </div>
+             
              </div>
            
              </div>

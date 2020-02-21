@@ -43,7 +43,7 @@ const Recipe = ({location})=>{
                  <div className='col-9  col-md-5 col-lg-4 mt-4 mt-md-0 text-center mx-auto'>
                      
                      <div className='card shadow'>
-                       <div className='card-header bg-success text-light text-center'>-health label-  {recipe.dietLabels}</div>
+                       <div className='card-header border-success text-success text-center'>-health label-  {recipe.dietLabels}</div>
                        <div className='card-body '>
                        <ul className='my-3 pl-0'>
                        {recipe.healthLabels.map((label, i=1) => (
