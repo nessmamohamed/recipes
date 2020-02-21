@@ -59,13 +59,8 @@ const Weight =()=>{
          } else{
              setEmpty(false)
          }
-
-         if(typeof(calories) !== 'number'){
-                  setValid(false)
-         }else{
-             setValid(true)
-         }
-
+           
+        
         
     }
     
@@ -151,7 +146,7 @@ const Weight =()=>{
 
                   <button onClick={equation} className ='btn btn-md btn-outline-danger my-4 px-4'>Submit</button>
                   { empty ? <p className='text-danger'>Please enter all fields !</p> :
-                    !valid? <p className='text-danger'>please enter a valid numbers !</p>:
+                    
                   totalCalories ?
                    <p className='text-info mb-4'>Your total daily calories is {totalCalories}</p> : ''}
                     
