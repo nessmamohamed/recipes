@@ -76,7 +76,7 @@ const Recipe = ({location})=>{
             </div>
               </Fade>
               <footer  className='bg-light text-dark text-center py-3'>
-                     Copy rights @Nessma M. Nazir <br/>
+                     developed by @Nessma M. Nazir <br/>
                      contact info: nessomohamed555@gmail.com <br/>
                                    K𝓪reem11222 (Gaster)™️ ✘#5136 <br/>
                                    Nesso™ ✘#2257

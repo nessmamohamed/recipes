@@ -47,21 +47,23 @@ const Weight =()=>{
     }
 
     const equation=()=>{
-        let calories 
+       
+            let calories 
          male? calories = 10 * Weight + 6.25 * Height -  5 * age + 5 :
                calories = (10 * Weight) + (6.25 * Height) - ( 5 * age) - 161
            
         let totalCaloriess = activity ? calories * activity : calories
          setTotalCalories(Math.floor(totalCaloriess))
-
+           
          if( !Weight || !Height || !age ){
            setEmpty(true)
          } else{
              setEmpty(false)
          }
            
+       
         
-        
+             
     }
     
      
@@ -92,18 +94,18 @@ const Weight =()=>{
                  
                  <div className='mb-4'>
                  <label>Weight: </label>
-                <input type='number' min= '10' max='300' title='weight must contain numbers from 10 to 300' 
+                <input type='number'  title='weight must contain numbers from 10 to 300' 
                  onChange={onChange3} type='text' className='input ml-3 mr-2 text-center' required/> <span>Kg</span>
                  </div>
                  <div className='mb-4'>
                  <label>Height: </label>
-                <input type='number' min='15' max='250' title='height must contain numbers from 15 to 250'
+                <input type='number'  title='height must contain numbers from 15 to 250'
                 onChange={onChange2} type='text' className='input ml-3 mr-2 text-center' required/> <span>Cm</span>
                  </div>
                   
                   <div className= 'mb-4'>
                   <label>Age: </label>
-                <input type ='number' min='1' max='100' title='age must contain numbers from 5 to 100'
+                <input type ='number'  title='age must contain numbers from 5 to 100'
                  onChange={onChange4} type='text' className='input ml-3 mr-2 text-center' required/> 
                   </div>
 
@@ -146,7 +148,7 @@ const Weight =()=>{
 
                   <button onClick={equation} className ='btn btn-md btn-outline-danger my-4 px-4'>Submit</button>
                   { empty ? <p className='text-danger'>Please enter all fields !</p> :
-                    
+                    !valid? <p>Please enter a valid english numbers</p>:
                   totalCalories ?
                    <p className='text-info mb-4'>Your total daily calories is {totalCalories}</p> : ''}
                     
@@ -155,7 +157,7 @@ const Weight =()=>{
         </div>
 
         <footer  className='bg-light text-dark py-3'>
-            Copy rights @Nessma M. Nazir <br/>
+            developed by @Nessma M. Nazir <br/>
             contact info: nessomohamed555@gmail.com <br/>
                           K𝓪reem11222 (Gaster)™️ ✘#5136 <br/>
                           Nesso™ ✘#2257 
