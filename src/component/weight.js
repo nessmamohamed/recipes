@@ -10,7 +10,7 @@ const Weight =()=>{
      let [age, setAge] = useState()
      let [totalCalories , setTotalCalories] = useState()
      const [empty , setEmpty] = useState(false)
-     const [valid, setValid] = useState(true)
+
 
      const onclickMale= ()=>{
          setMale(true)
@@ -148,7 +148,7 @@ const Weight =()=>{
 
                   <button onClick={equation} className ='btn btn-md btn-outline-danger my-4 px-4'>Submit</button>
                   { empty ? <p className='text-danger'>Please enter all fields !</p> :
-                    !valid? <p>Please enter a valid english numbers</p>:
+                   
                   totalCalories ?
                    <p className='text-info mb-4'>Your total daily calories is {totalCalories}</p> : ''}
                     
