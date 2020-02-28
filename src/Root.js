@@ -42,7 +42,7 @@ export default class Root extends React.Component{
            <nav  className="navbar navbar-light  fixed-top " style={{backgroundColor: this.state.lastScrollY <= 43 ? '#000008': 'rgba(0, 0, 8, 0.35)' ,
            transition: 'background 500ms'  , height:'60px', zIndex: '1', boxShadow: '0 .9px 10px rgba(0,0,0,.15)'}}>
            
-                  <a className="navbar-brand ml-5 text-light border-bottom border-top" href="/" 
+                  <a className="navbar-brand ml-5 text-light border-bottom border-top" href="/recipes" 
                   style={{fontSize: 'xlarge'}}>Recipes</a>
                  </nav>
                 
