@@ -35,7 +35,7 @@ const Recipe = ({location})=>{
                             
                         </div>
                         <p className='pt-4 pt-lg-0 '><a href={recipe.url}  style={{color: '#6189b5'}}>Click here for recipe preparation</a></p>
-                        <Link to = '/recipes-nutrition' className = 'btn btn-outline-success btn-xl d-table ml-3 mb-2' >Back to Recipes</Link>
+                        <Link to = 'recipes/recipes-nutrition' className = 'btn btn-outline-success btn-xl d-table ml-3 mb-2' >Back to Recipes</Link>
                        
                       </div>
                   </div>

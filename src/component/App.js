@@ -25,7 +25,7 @@ const App = () => {
               <div id='border' className='mx-auto mb-5'></div>
               </Zoom>
               <div>
-              <Link to = {{pathname: '/recipes-nutrition'}}
+              <Link to = {{pathname: 'recipes/recipes-nutrition'}}
              className='btn btn-success btn-sm rounded px-md-3 py-2 mr-2' id='btn'>Start now
              <FontAwesomeIcon icon={faHamburger} className='ml-3' style={{color: 'wheat'}}/>
              </Link>
