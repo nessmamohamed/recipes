@@ -122,7 +122,7 @@ const Recipes = () => {
                                       
                               <p className='mt-2 text-warning'>calories({Math.floor(recipe.recipe.calories/recipe.recipe.yield) + ' /serv'})</p>                                                                              
                               
-                               <Link to = {{pathname: `https://nessmamohamed.github.io/recipes/nutrition/${recipe.recipe.calories}`,
+                               <Link to = {{pathname: `/recipes/nutrition/${recipe.recipe.calories}`,
                                          state:{recipes: recipe.recipe}}}
                               className='btn btn-outline-success btn-md'>view ingredients</Link>
 
