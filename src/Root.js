@@ -48,7 +48,7 @@ export default class Root extends React.Component{
                 
            <Router>
                <Route exact path='/recipes' component = {App} />
-               <Route path='/recipes/nutrition' component ={Recipes}/>
+               <Route path='/nutrition' component ={Recipes}/>
                <Route path='/recipes/nutrition/:id' component= {Recipe}/>
                <Route  path ='/recipes/weight' component={Weight}/>
            </Router>
