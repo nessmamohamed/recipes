@@ -47,10 +47,10 @@ export default class Root extends React.Component{
                  </nav>
                 
            <Router>
-               <Route exact path='/' component = {App} />
-               <Route path='/recipes' component ={Recipes}/>
-               <Route path='/recipe/:id' component= {Recipe}/>
-               <Route  path ='/weight' component={Weight}/>
+               <Route exact path='/recipes' component = {App} />
+               <Route path='/recipes-nutrition' component ={Recipes}/>
+               <Route path='/recipes-nutrition/:id' component= {Recipe}/>
+               <Route  path ='/recipes/weight' component={Weight}/>
            </Router>
 
           
